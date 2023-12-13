@@ -20,8 +20,8 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
       ),
       body: Stack(
         children: [
-          //Bacground Graphics
-
+          //Background Graphics
+          ScreenBacground(context),
           Container(
             child: (SingleChildScrollView(
               padding: EdgeInsets.all(20),
