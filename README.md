@@ -1,6 +1,6 @@
-# crudapp
+# CRUD APP
 
-A CRUD With REST API App Flutter project.
+CRUD APP With REST API Flutter project.
 
 ## Getting Started
 
