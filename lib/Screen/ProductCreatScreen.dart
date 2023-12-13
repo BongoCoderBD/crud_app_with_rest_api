@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Style/Style.dart';
+
 class ProductCreatScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -18,16 +20,23 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
       ),
       body: Stack(
         children: [
+          //Bacground Graphics
+
           Container(
             child: (SingleChildScrollView(
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  TextFormField(onChanged: (value){},),
-                  TextFormField(onChanged: (value){},),
-                  TextFormField(onChanged: (value){},),
-                  TextFormField(onChanged: (value){},),
-                  TextFormField(onChanged: (value){},),
+                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Product Name"),),
+                  sizedBox,
+                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Product Code"),),
+                  sizedBox,
+                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Product Image"),),
+                  sizedBox,
+                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Unit Price"),),
+                  sizedBox,
+                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Total Price"),),
+
                 ],
               ),
             )),
