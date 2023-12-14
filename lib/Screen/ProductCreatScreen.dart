@@ -53,8 +53,12 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
                   sizedBox,
                   TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Total Price"),),
                   sizedBox,
-                  ElevatedButton(onPressed: (){},
-                      child: Text("Submit"))
+                  Container(
+                    child: ElevatedButton(onPressed: (){},
+                        child: SuccessButtonChild("Submit"),
+                      style: AppButtonStyle(),
+                    ),
+                  )
                 ],
               ),
             )),

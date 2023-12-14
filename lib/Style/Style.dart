@@ -52,3 +52,27 @@ return DecoratedBox(
   ),
 );
 }
+
+
+ButtonStyle AppButtonStyle(){
+  return ElevatedButton.styleFrom(
+    elevation: 1,
+    padding: EdgeInsets.all(0),
+    backgroundColor: Colors.transparent
+  );
+}
+
+Ink SuccessButtonChild(ButtonText){
+  return Ink(
+    decoration: BoxDecoration(
+      color: colorGreen,
+      borderRadius: BorderRadius.circular(6),
+
+    ),
+    child: Container(
+      height: 45,
+      alignment: Alignment.center,
+      child: Text(ButtonText, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),),
+    ),
+  );
+}
