@@ -3,14 +3,22 @@ import 'package:flutter/material.dart';
 import '../Style/Style.dart';
 
 class ProductCreatScreen extends StatefulWidget {
+
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return ProductCreatScreenUI();
-  }
+  State<StatefulWidget> createState() => ProductCreatScreenUI();
+
 }
 
 class ProductCreatScreenUI extends State<ProductCreatScreen> {
+
+  Map<String, String> FormValues ={"Img":"", "ProductCode":"","ProductName":"","Qty":"","TotalPrice":"","UnitPrice":""};
+
+  InputOnChange(MapKey, TextValue){
+    setState(() {
+      FormValues.update(MapKey, (value) => TextValue);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -27,31 +35,33 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Product Name"),),
+                  TextFormField(onChanged: (TextValue){InputOnChange("ProductName",TextValue);}, decoration: AppInputDecoration("Product Name"),),
                   sizedBox,
-                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Product Code"),),
+                  TextFormField(onChanged: (TextValue){InputOnChange("ProductCode",TextValue);}, decoration: AppInputDecoration("Product Code"),),
                   sizedBox,
-                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Product Image"),),
+                  TextFormField(onChanged: (TextValue){InputOnChange("Img",TextValue);}, decoration: AppInputDecoration("Product Image"),),
                   sizedBox,
-                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Unit Price"),),
+                  TextFormField(onChanged: (TextValue){InputOnChange("UnitPrice",TextValue);}, decoration: AppInputDecoration("Unit Price"),),
                   sizedBox,
                   AppDropDownStyle(
                       DropdownButton(
-                        value: "",
-                        items: [
-                          DropdownMenuItem(child: Text("Select qt"), value: "",),
-                          DropdownMenuItem(child: Text("1 pcs"), value: "1 pcs",),
-                          DropdownMenuItem(child: Text("2 pcs"), value: "2 pcs",),
-                          DropdownMenuItem(child: Text("3 pcs"), value: "3 pcs",),
-
+                        value:FormValues['Qty'] ,
+                        items:[
+                          DropdownMenuItem(child: Text('Select Qt'),value: "",),
+                          DropdownMenuItem(child: Text('1 pcs'),value: "1 pcs",),
+                          DropdownMenuItem(child: Text('2 pcs'),value: '2 pcs',),
+                          DropdownMenuItem(child: Text('3 pcs'),value: '3 pcs',),
+                          DropdownMenuItem(child: Text('4 pcs'),value: '4 pcs',),
                         ],
-                        onChanged: (value){},
+                        onChanged: (Textvalue){
+                          InputOnChange("Qty",Textvalue);
+                        },
                         underline: Container(),
                         isExpanded: true,
                       )
                   ),
                   sizedBox,
-                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Total Price"),),
+                  TextFormField(onChanged: (TextValue){InputOnChange("TotalPrice",TextValue);}, decoration: AppInputDecoration("Total Price"),),
                   sizedBox,
                   Container(
                     child: ElevatedButton(onPressed: (){},
