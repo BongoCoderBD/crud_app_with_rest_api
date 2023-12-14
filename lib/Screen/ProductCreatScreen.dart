@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../RestAPI/RestClient.dart';
 import '../Style/Style.dart';
 
 class ProductCreatScreen extends StatefulWidget {
@@ -39,7 +40,7 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
       ErrorToast('Total Price Required !');
     }
     else{
-
+      await ProductCreatRequest(FormValues);
     }
   }
 
