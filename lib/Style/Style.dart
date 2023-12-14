@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 const colorRed = Color.fromRGBO(231, 28, 36, 1);
 const colorGreen = Color.fromRGBO(33, 191, 115, 1);
 const colorWhite = Color.fromRGBO(255, 255, 255, 1);
@@ -72,5 +73,29 @@ Ink SuccessButtonChild(ButtonText){
       alignment: Alignment.center,
       child: Text(ButtonText, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),),
     ),
+  );
+}
+
+ErrorToast(msg){
+  Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: colorRed,
+      textColor: colorWhite,
+      fontSize: 16.0
+  );
+}
+
+SuccessToast(msg){
+  Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: colorGreen,
+      textColor: colorWhite,
+      fontSize: 16.0
   );
 }

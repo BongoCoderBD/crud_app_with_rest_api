@@ -19,6 +19,31 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
     });
   }
 
+  FormOnSubmit() async{
+    if(FormValues['ProductName']!.length==0){
+      ErrorToast('Product Name Required !');
+    }
+    else if(FormValues['ProductCode']!.length==0){
+      ErrorToast('Product Code Required !');
+    }
+    else if(FormValues['Img']!.length==0){
+      ErrorToast('Image Link Required !');
+    }
+    else if(FormValues['UnitPrice']!.length==0){
+      ErrorToast('Unit Price Required !');
+    }
+    else if(FormValues['Qty']!.length==0){
+      ErrorToast('Product Qty Required !');
+    }
+    else if(FormValues['TotalPrice']!.length==0){
+      ErrorToast('Total Price Required !');
+    }
+    else{
+
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -64,7 +89,7 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
                   TextFormField(onChanged: (TextValue){InputOnChange("TotalPrice",TextValue);}, decoration: AppInputDecoration("Total Price"),),
                   sizedBox,
                   Container(
-                    child: ElevatedButton(onPressed: (){},
+                    child: ElevatedButton(onPressed: (){FormOnSubmit();},
                         child: SuccessButtonChild("Submit"),
                       style: AppButtonStyle(),
                     ),
