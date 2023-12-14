@@ -35,8 +35,26 @@ class ProductCreatScreenUI extends State<ProductCreatScreen> {
                   sizedBox,
                   TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Unit Price"),),
                   sizedBox,
-                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Total Price"),),
+                  AppDropDownStyle(
+                      DropdownButton(
+                        value: "",
+                        items: [
+                          DropdownMenuItem(child: Text("Select qt"), value: "",),
+                          DropdownMenuItem(child: Text("1 pcs"), value: "1 pcs",),
+                          DropdownMenuItem(child: Text("2 pcs"), value: "2 pcs",),
+                          DropdownMenuItem(child: Text("3 pcs"), value: "3 pcs",),
 
+                        ],
+                        onChanged: (value){},
+                        underline: Container(),
+                        isExpanded: true,
+                      )
+                  ),
+                  sizedBox,
+                  TextFormField(onChanged: (value){}, decoration: AppInputDecoration("Total Price"),),
+                  sizedBox,
+                  ElevatedButton(onPressed: (){},
+                      child: Text("Submit"))
                 ],
               ),
             )),
